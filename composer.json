@@ -1,6 +1,6 @@
 {
-  "name": "louisk/zenvia",
-  "description": "Zenvia Package for sending SMS",
+  "name": "louisk/boleto-facil",
+  "description": "Boleto Facil integration with PHP and Laravel",
   "keywords": [
     "boleto-facil",
     "boleto",
