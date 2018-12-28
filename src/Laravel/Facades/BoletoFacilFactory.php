@@ -6,7 +6,7 @@
  * Time: 12:23
  */
 
-namespace Louis\Zenvia\Facades;
+namespace Louisk\BoletoFacil\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
