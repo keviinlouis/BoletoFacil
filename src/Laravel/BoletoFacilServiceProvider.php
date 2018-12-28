@@ -9,10 +9,10 @@
 namespace Louisk\BoletoFacil\Laravel;
 
 
+use Illuminate\Support\ServiceProvider;
 use Louisk\BoletoFacil\BoletoFacilService;
 use Louisk\BoletoFacil\Laravel\Commands\GerarBoleto;
 use Louisk\BoletoFacil\Resources\AuthResource;
-use Illuminate\Support\ServiceProvider;
 
 class BoletoFacilServiceProvider extends ServiceProvider
 {
@@ -46,13 +46,14 @@ class BoletoFacilServiceProvider extends ServiceProvider
             GerarBoleto::class
         );
 
-        $this->app->singleton('boleto-facil', function(){
+        $this->app->singleton('boleto-facil', function ($app) {
+            $config = $app['config']['boleto-facil'];
 
-            $token = config('boleto-facil.token', env('BOLETO_FACIL_TOKEN'));
+            $token = $config['token'];
 
-            $sandbox = config('boleto-facil.sandbox', env('BOLETO_FACIL_SANDBOX'));
+            $sandbox = $config['sandbox'];
 
-            $notificationUrl = config('boleto-facil.notification_url');
+            $notificationUrl = $config['notification_url'];
 
             return new BoletoFacilService(new AuthResource($token, $sandbox, $notificationUrl));
 
