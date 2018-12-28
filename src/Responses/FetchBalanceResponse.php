@@ -6,7 +6,7 @@
  * Time: 17:08
  */
 
-namespace App\BoletoFacil\Responses;
+namespace Louisk\BoletoFacil\Responses;
 
 
 class FetchBalanceResponse

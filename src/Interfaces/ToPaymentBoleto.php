@@ -6,10 +6,10 @@
  * Time: 18:57
  */
 
-namespace App\BoletoFacil\Interfaces;
+namespace Louisk\BoletoFacil\Interfaces;
 
 
-use App\BoletoFacil\Resources\PaymentBoletoResource;
+use Louisk\BoletoFacil\Resources\PaymentBoletoResource;
 
 interface ToPaymentBoleto extends ToPayment
 {

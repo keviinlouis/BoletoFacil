@@ -6,7 +6,7 @@
  * Time: 16:18
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
 class AuthResource

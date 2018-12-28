@@ -6,7 +6,7 @@
  * Time: 18:00
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
 class PaymentBoletoResource extends PaymentResource

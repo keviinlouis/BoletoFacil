@@ -6,10 +6,10 @@
  * Time: 18:03
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
-use App\BoletoFacil\Interfaces\Arrayable;
+use Louisk\BoletoFacil\Interfaces\Arrayable;
 
 class CreditCardResource implements Arrayable
 {

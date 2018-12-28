@@ -6,7 +6,7 @@
  * Time: 20:01
  */
 
-namespace App\BoletoFacil\Responses;
+namespace Louisk\BoletoFacil\Responses;
 
 
 class Response

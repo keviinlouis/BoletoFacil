@@ -1,6 +1,6 @@
 <?php
 
-namespace App\BoletoFacil\Validators;
+namespace Louisk\BoletoFacil\Validators;
 
 /**
  * ValidaCPFCNPJ valida e formata CPF e CNPJ

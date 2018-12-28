@@ -6,12 +6,12 @@
  * Time: 20:05
  */
 
-namespace App\BoletoFacil\Responses;
+namespace Louisk\BoletoFacil\Responses;
 
 
-use App\BoletoFacil\Resources\BilletDetailsResponse;
-use App\BoletoFacil\Resources\ChargeResponse;
-use App\BoletoFacil\Resources\PaymentResponse;
+use Louisk\BoletoFacil\Resources\BilletDetailsResponse;
+use Louisk\BoletoFacil\Resources\ChargeResponse;
+use Louisk\BoletoFacil\Resources\PaymentResponse;
 
 class FetchPaymentResponse
 {

@@ -6,10 +6,10 @@
  * Time: 18:57
  */
 
-namespace App\BoletoFacil\Interfaces;
+namespace Louisk\BoletoFacil\Interfaces;
 
 
-use App\BoletoFacil\Resources\PaymentCreditCardResource;
+use Louisk\BoletoFacil\Resources\PaymentCreditCardResource;
 
 interface ToPaymentCreditCard extends ToPayment
 {

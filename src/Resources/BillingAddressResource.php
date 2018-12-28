@@ -6,7 +6,7 @@
  * Time: 13:04
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
 class BillingAddressResource

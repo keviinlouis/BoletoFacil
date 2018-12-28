@@ -1,9 +1,9 @@
 <?php
 
-namespace App\BoletoFacil\Laravel\Commands;
+namespace Louisk\BoletoFacil\Laravel\Commands;
 
-use App\BoletoFacil\BoletoFacilService;
-use App\BoletoFacil\Resources\AuthResource;
+use Louisk\BoletoFacil\BoletoFacilService;
+use Louisk\BoletoFacil\Resources\AuthResource;
 use Illuminate\Console\Command;
 
 class GerarBoleto extends Command
@@ -36,10 +36,10 @@ class GerarBoleto extends Command
      * Execute the console command.
      *
      * @return mixed
-     * @throws \App\BoletoFacil\Exceptions\DescriptionTooLargeException
-     * @throws \App\BoletoFacil\Exceptions\InvalidAmountException
-     * @throws \App\BoletoFacil\Exceptions\InvalidPayerDocumentException
-     * @throws \App\BoletoFacil\Exceptions\ReferenceTooLargeException
+     * @throws \Louisk\BoletoFacil\Exceptions\DescriptionTooLargeException
+     * @throws \Louisk\BoletoFacil\Exceptions\InvalidAmountException
+     * @throws \Louisk\BoletoFacil\Exceptions\InvalidPayerDocumentException
+     * @throws \Louisk\BoletoFacil\Exceptions\ReferenceTooLargeException
      */
     public function handle()
     {

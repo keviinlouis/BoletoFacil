@@ -6,10 +6,10 @@
  * Time: 13:56
  */
 
-namespace App\BoletoFacil\Validators;
+namespace Louisk\BoletoFacil\Validators;
 
 
-use App\BoletoFacil\Exceptions\InvalidEmailException;
+use Louisk\BoletoFacil\Exceptions\InvalidEmailException;
 
 class ValidatorEmail
 {

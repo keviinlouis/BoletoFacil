@@ -6,13 +6,13 @@
  * Time: 13:01
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
-use App\BoletoFacil\Exceptions\InvalidPayerDocumentException;
-use App\BoletoFacil\Interfaces\Arrayable;
-use App\BoletoFacil\Validators\ValidatorCPFCNPJ;
-use App\BoletoFacil\Validators\ValidatorEmail;
+use Louisk\BoletoFacil\Exceptions\InvalidPayerDocumentException;
+use Louisk\BoletoFacil\Interfaces\Arrayable;
+use Louisk\BoletoFacil\Validators\ValidatorCPFCNPJ;
+use Louisk\BoletoFacil\Validators\ValidatorEmail;
 use Carbon\Carbon;
 
 class PayerResource implements Arrayable
@@ -49,7 +49,7 @@ class PayerResource implements Arrayable
      *
      * @param string $payerEmail
      * @return PayerResource
-     * @throws \App\BoletoFacil\Exceptions\InvalidEmailException
+     * @throws \Louisk\BoletoFacil\Exceptions\InvalidEmailException
      */
     public function setPayerEmail(string $payerEmail): self
     {
@@ -65,7 +65,7 @@ class PayerResource implements Arrayable
      *
      * @param string $payerSecondaryEmail
      * @return PayerResource
-     * @throws \App\BoletoFacil\Exceptions\InvalidEmailException
+     * @throws \Louisk\BoletoFacil\Exceptions\InvalidEmailException
      */
     public function setPayerSecondaryEmail(string $payerSecondaryEmail): self
     {

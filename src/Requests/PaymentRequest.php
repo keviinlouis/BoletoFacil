@@ -6,14 +6,14 @@
  * Time: 19:34
  */
 
-namespace App\BoletoFacil\Requests;
+namespace Louisk\BoletoFacil\Requests;
 
 
-use App\BoletoFacil\Request;
-use App\BoletoFacil\Resources\PaymentBoletoResource;
-use App\BoletoFacil\Resources\PaymentResource;
-use App\BoletoFacil\Responses\CreatePaymentResponse;
-use App\BoletoFacil\Responses\FetchPaymentResponse;
+use Louisk\BoletoFacil\Request;
+use Louisk\BoletoFacil\Resources\PaymentBoletoResource;
+use Louisk\BoletoFacil\Resources\PaymentResource;
+use Louisk\BoletoFacil\Responses\CreatePaymentResponse;
+use Louisk\BoletoFacil\Responses\FetchPaymentResponse;
 
 class PaymentRequest extends Request
 {

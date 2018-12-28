@@ -6,12 +6,12 @@
  * Time: 16:21
  */
 
-namespace App\BoletoFacil\Laravel;
+namespace Louisk\BoletoFacil\Laravel;
 
 
-use App\BoletoFacil\BoletoFacilService;
-use App\BoletoFacil\Laravel\Commands\GerarBoleto;
-use App\BoletoFacil\Resources\AuthResource;
+use Louisk\BoletoFacil\BoletoFacilService;
+use Louisk\BoletoFacil\Laravel\Commands\GerarBoleto;
+use Louisk\BoletoFacil\Resources\AuthResource;
 use Illuminate\Support\ServiceProvider;
 
 class BoletoFacilServiceProvider extends ServiceProvider

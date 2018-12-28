@@ -6,7 +6,7 @@
  * Time: 20:06
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
 class PaymentResponse

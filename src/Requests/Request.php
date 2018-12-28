@@ -6,12 +6,12 @@
  * Time: 12:14
  */
 
-namespace App\BoletoFacil;
+namespace Louisk\BoletoFacil;
 
 
-use App\BoletoFacil\Interfaces\Arrayable;
-use App\BoletoFacil\Resources\AuthResource;
-use App\BoletoFacil\Responses\Response;
+use Louisk\BoletoFacil\Interfaces\Arrayable;
+use Louisk\BoletoFacil\Resources\AuthResource;
+use Louisk\BoletoFacil\Responses\Response;
 use GuzzleHttp\Client;
 use function GuzzleHttp\Psr7\build_query;
 

@@ -6,7 +6,7 @@
  * Time: 19:01
  */
 
-namespace App\BoletoFacil\Interfaces;
+namespace Louisk\BoletoFacil\Interfaces;
 
 
 interface ToPayment

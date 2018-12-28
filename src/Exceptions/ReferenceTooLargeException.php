@@ -6,7 +6,7 @@
  * Time: 12:38
  */
 
-namespace App\BoletoFacil\Exceptions;
+namespace Louisk\BoletoFacil\Exceptions;
 
 
 class ReferenceTooLargeException extends \Exception

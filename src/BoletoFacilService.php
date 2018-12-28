@@ -6,16 +6,16 @@
  * Time: 12:14
  */
 
-namespace App\BoletoFacil;
+namespace Louisk\BoletoFacil;
 
 
-use App\BoletoFacil\Interfaces\ToPayment;
-use App\BoletoFacil\Interfaces\ToPaymentBoleto;
-use App\BoletoFacil\Interfaces\ToPaymentCreditCard;
-use App\BoletoFacil\Requests\PaymentRequest;
-use App\BoletoFacil\Resources\AuthResource;
-use App\BoletoFacil\Resources\PayerResource;
-use App\BoletoFacil\Resources\PaymentBoletoResource;
+use Louisk\BoletoFacil\Interfaces\ToPayment;
+use Louisk\BoletoFacil\Interfaces\ToPaymentBoleto;
+use Louisk\BoletoFacil\Interfaces\ToPaymentCreditCard;
+use Louisk\BoletoFacil\Requests\PaymentRequest;
+use Louisk\BoletoFacil\Resources\AuthResource;
+use Louisk\BoletoFacil\Resources\PayerResource;
+use Louisk\BoletoFacil\Resources\PaymentBoletoResource;
 
 class BoletoFacilService
 {

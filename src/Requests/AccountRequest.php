@@ -6,12 +6,12 @@
  * Time: 17:05
  */
 
-namespace App\BoletoFacil\Requests;
+namespace Louisk\BoletoFacil\Requests;
 
 
-use App\BoletoFacil\Request;
-use App\BoletoFacil\Responses\FetchBalanceResponse;
-use App\BoletoFacil\Responses\Response;
+use Louisk\BoletoFacil\Request;
+use Louisk\BoletoFacil\Responses\FetchBalanceResponse;
+use Louisk\BoletoFacil\Responses\Response;
 
 class AccountRequest extends Request
 {

@@ -6,18 +6,18 @@
  * Time: 12:36
  */
 
-namespace App\BoletoFacil\Resources;
+namespace Louisk\BoletoFacil\Resources;
 
 
-use App\BoletoFacil\Exceptions\DescriptionTooLargeException;
-use App\BoletoFacil\Exceptions\InvalidAmountException;
-use App\BoletoFacil\Exceptions\InvalidDiscountAmountException;
-use App\BoletoFacil\Exceptions\InvalidDiscountDaysException;
-use App\BoletoFacil\Exceptions\InvalidFineException;
-use App\BoletoFacil\Exceptions\InvalidInterestException;
-use App\BoletoFacil\Exceptions\InvalidMaxOverdueDaysException;
-use App\BoletoFacil\Exceptions\ReferenceTooLargeException;
-use App\BoletoFacil\Interfaces\Arrayable;
+use Louisk\BoletoFacil\Exceptions\DescriptionTooLargeException;
+use Louisk\BoletoFacil\Exceptions\InvalidAmountException;
+use Louisk\BoletoFacil\Exceptions\InvalidDiscountAmountException;
+use Louisk\BoletoFacil\Exceptions\InvalidDiscountDaysException;
+use Louisk\BoletoFacil\Exceptions\InvalidFineException;
+use Louisk\BoletoFacil\Exceptions\InvalidInterestException;
+use Louisk\BoletoFacil\Exceptions\InvalidMaxOverdueDaysException;
+use Louisk\BoletoFacil\Exceptions\ReferenceTooLargeException;
+use Louisk\BoletoFacil\Interfaces\Arrayable;
 use Carbon\Carbon;
 
 abstract class PaymentResource implements Arrayable
