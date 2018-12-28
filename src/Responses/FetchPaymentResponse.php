@@ -9,7 +9,6 @@
 namespace Louisk\BoletoFacil\Responses;
 
 
-use Louisk\BoletoFacil\Resources\BilletDetailsResponse;
 use Louisk\BoletoFacil\Resources\ChargeResponse;
 use Louisk\BoletoFacil\Resources\PaymentResponse;
 
@@ -21,19 +20,9 @@ class FetchPaymentResponse
     protected $response;
 
     /**
-     * @var ChargeResponse[]
+     * @var PaymentResponse
      */
-    protected $charges;
-
-    /**
-     * @var PaymentResponse[]
-     */
-    protected $payments;
-
-    /**
-     * @var bool
-     */
-    protected $isTransparentCheckout;
+    protected $payment;
 
     /**
      * @var array
@@ -46,20 +35,24 @@ class FetchPaymentResponse
 
         $this->data = $response->getData();
 
-        $this->charges = [];
-        $this->payments = [];
+        $payment = $this->data['payment'];
 
-        foreach ($this->data['payments'] as $payment) {
-            $this->payments[] = new PaymentResponse(
-                $payment['id'],
-                $payment['amount'],
-                $payment['date'],
-                $payment['fee'],
-                $payment['type'],
-                $payment['status'],
-                $payment['creditCardId']
-            );
-        }
+        $this->payment = new PaymentResponse(
+            $payment['id'],
+            $payment['amount'],
+            $payment['date'],
+            $payment['fee'],
+            $payment['type'],
+            $payment['status']
+        );
+
+        $charge = $payment['charge'];
+
+        $this->payment->setCharge(new ChargeResponse(
+            $charge['code'],
+            $charge['reference'],
+            $charge['dueDate']
+        ));
 
     }
 

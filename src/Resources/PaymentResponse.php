@@ -66,6 +66,11 @@ class PaymentResponse
      */
     protected $creditCardId;
 
+    /**
+     * @var ChargeResponse
+     */
+    protected $charge;
+
 
     /**
      * @param int $id
@@ -83,7 +88,7 @@ class PaymentResponse
         string $date,
         string $fee,
         string $type,
-        string $status,
+        string $status = null,
         string $creditCardId = null
     ) {
         $this->id = $id;
@@ -93,6 +98,16 @@ class PaymentResponse
         $this->type = $type;
         $this->status = $status;
         $this->creditCardId = $creditCardId;
+    }
+
+    /**
+     * @param ChargeResponse $charge
+     * @return PaymentResponse
+     */
+    public function setCharge(ChargeResponse $charge): PaymentResponse
+    {
+        $this->charge = $charge;
+        return $this;
     }
 
     /**

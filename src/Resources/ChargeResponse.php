@@ -54,10 +54,10 @@ class ChargeResponse
         int $code,
         $reference,
         string $dueDate,
-        string $checkoutUrl,
-        string $link,
-        string $installmentLink,
-        string $payNumber
+        string $checkoutUrl = null,
+        string $link = null,
+        string $installmentLink = null,
+        string $payNumber = null
     ) {
         $this->code = $code;
 
