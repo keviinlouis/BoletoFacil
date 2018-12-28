@@ -9,7 +9,9 @@
 namespace Louisk\BoletoFacil\Interfaces;
 
 
+use Louisk\BoletoFacil\Resources\PayerResource;
+
 interface ToPayer
 {
-
+    public function toPayer(): PayerResource;
 }
