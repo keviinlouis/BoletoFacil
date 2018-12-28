@@ -52,7 +52,9 @@ class BoletoFacilServiceProvider extends ServiceProvider
 
             $sandbox = config('boleto-facil.sandbox', env('BOLETO_FACIL_SANDBOX'));
 
-            return new BoletoFacilService(new AuthResource($token, $sandbox, ''));
+            $notificationUrl = config('boleto-facil.notification_url');
+
+            return new BoletoFacilService(new AuthResource($token, $sandbox, $notificationUrl));
 
         });
     }
