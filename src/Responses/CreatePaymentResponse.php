@@ -70,7 +70,7 @@ class CreatePaymentResponse
                 ));
             }
 
-            $this->charges[] = $charge;
+            $this->charges[] = $chargeResponse;
         }
 
         if(isset($this->data['payments'])) {
