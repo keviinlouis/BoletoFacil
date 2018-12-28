@@ -50,30 +50,30 @@ class CreatePaymentResponse
         $this->payments = [];
 
         foreach ($this->data['charges'] as $charge) {
-            $billetDetails = null;
-
-            if(isset($charge['billetDetails'])) {
-                $billetDetails = new BilletDetailsResponse(
-                    $charge['billetDetails']['bankAccount'],
-                    $charge['billetDetails']['ourNumber'],
-                    $charge['billetDetails']['barcodeNumber'],
-                    $charge['billetDetails']['portfolio']
-                );
-            }
-
-            $this->charges[] = new ChargeResponse(
+            $chargeResponse = new ChargeResponse(
                 $charge['code'],
                 $charge['reference'],
                 $charge['dueDate'],
                 $charge['checkoutUrl'],
                 $charge['link'],
                 $charge['installmentLink'],
-                $charge['payNumber'],
-                $billetDetails
+                $charge['payNumber']
             );
+
+
+            if(isset($charge['billetDetails'])) {
+                $chargeResponse->setBilletDetails(new BilletDetailsResponse(
+                    $charge['billetDetails']['bankAccount'],
+                    $charge['billetDetails']['ourNumber'],
+                    $charge['billetDetails']['barcodeNumber'],
+                    $charge['billetDetails']['portfolio']
+                ));
+            }
+
+            $this->charges[] = $charge;
         }
 
-        if(isset($this->data['payments'])){
+        if(isset($this->data['payments'])) {
             $this->isTransparentCheckout = true;
             foreach ($this->data['payments'] as $payment) {
                 $this->payments[] = new PaymentResponse(
@@ -87,7 +87,6 @@ class CreatePaymentResponse
                 );
             }
         }
-
     }
 
     /**

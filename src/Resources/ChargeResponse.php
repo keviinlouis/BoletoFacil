@@ -41,9 +41,14 @@ class ChargeResponse
      */
     protected $payNumber;
     /**
-     * @var array
+     * @var BilletDetailsResponse
      */
     protected $billetDetails;
+
+    /**
+     * @var array
+     */
+    protected $payments;
 
     public function __construct(
         int $code,
@@ -52,8 +57,7 @@ class ChargeResponse
         string $checkoutUrl,
         string $link,
         string $installmentLink,
-        string $payNumber,
-        BilletDetailsResponse $billetDetails = null
+        string $payNumber
     ) {
         $this->code = $code;
 
@@ -69,7 +73,6 @@ class ChargeResponse
 
         $this->payNumber = $payNumber;
 
-        $this->billetDetails = $billetDetails;
     }
 
     /**
@@ -131,8 +134,46 @@ class ChargeResponse
     /**
      * @return array
      */
-    public function getBilletDetails(): array
+    public function getBilletDetails(): BilletDetailsResponse
     {
         return $this->billetDetails;
+    }
+
+    /**
+     * @param BilletDetailsResponse $billetDetails
+     * @return ChargeResponse
+     */
+    public function setBilletDetails(BilletDetailsResponse $billetDetails): ChargeResponse
+    {
+        $this->billetDetails = $billetDetails;
+        return $this;
+    }
+
+    /**
+     * @return array|PaymentResponse[]
+     */
+    public function getPayments(): array
+    {
+        return $this->payments;
+    }
+
+    /**
+     * @param array $payments
+     * @return ChargeResponse
+     */
+    public function setPayments(array $payments)
+    {
+        $this->payments = $payments;
+        return $this;
+    }
+
+    /**
+     * @param PaymentResponse $paymentResponse
+     * @return $this
+     */
+    public function addPayment(PaymentResponse $paymentResponse)
+    {
+        $this->payments[] = $paymentResponse;
+        return $this;
     }
 }

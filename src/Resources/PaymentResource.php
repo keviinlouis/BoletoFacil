@@ -90,6 +90,11 @@ abstract class PaymentResource implements Arrayable
     protected $creditCard;
 
     /**
+     * @var string
+     */
+    protected $notificationUrl;
+
+    /**
      * BoletoResource constructor.
      * @param int|string $reference
      * @param string $description
@@ -257,6 +262,16 @@ abstract class PaymentResource implements Arrayable
         return $this;
     }
 
+    /**
+     * @param string $notificationUrl
+     * @return PaymentResource
+     */
+    public function setNotificationUrl(string $notificationUrl): PaymentResource
+    {
+        $this->notificationUrl = $notificationUrl;
+        return $this;
+    }
+
     public function toArray(): array
     {
         $data = [
@@ -271,6 +286,7 @@ abstract class PaymentResource implements Arrayable
             'interest' => $this->interest,
             'discountDays' => $this->discountDays,
             'discountAmount' => $this->discountAmount,
+            'notificationUrl' => $this->notificationUrl
         ];
 
         return array_merge(

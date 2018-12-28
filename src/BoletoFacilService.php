@@ -13,6 +13,7 @@ use Louisk\BoletoFacil\Interfaces\ToPaymentBoleto;
 use Louisk\BoletoFacil\Interfaces\ToPaymentCreditCard;
 use Louisk\BoletoFacil\Requests\PaymentRequest;
 use Louisk\BoletoFacil\Resources\AuthResource;
+use Louisk\BoletoFacil\Responses\FetchPaymentResponse;
 
 class BoletoFacilService
 {
@@ -21,6 +22,10 @@ class BoletoFacilService
      */
     private $auth;
 
+    /**
+     * BoletoFacilService constructor.
+     * @param AuthResource $authResource
+     */
     public function __construct(AuthResource $authResource)
     {
         $this->auth = $authResource;
@@ -28,6 +33,7 @@ class BoletoFacilService
 
     /**
      * @param ToPaymentBoleto $payment
+     * @throws Exceptions\MissingNotificationUrlException
      */
     public function makePaymentBoleto(ToPaymentBoleto $payment)
     {
@@ -41,6 +47,10 @@ class BoletoFacilService
 
     }
 
+    /**
+     * @param ToPaymentCreditCard $payment
+     * @throws Exceptions\MissingNotificationUrlException
+     */
     public function makePaymentCreditCard(ToPaymentCreditCard $payment)
     {
         $request = new PaymentRequest($this->auth);
@@ -50,13 +60,16 @@ class BoletoFacilService
         $payment->savePaymentId($response->getCharge()->getCode());
     }
 
-    public function get()
+    /**
+     * @param string $paymentToken
+     * @return FetchPaymentResponse
+     */
+    public function getPayment(string $paymentToken): FetchPaymentResponse
     {
+        $request = new PaymentRequest($this->auth);
 
-    }
+        $response = $request->fetch($paymentToken);
 
-    public function registerWebHook()
-    {
-
+        return $response;
     }
 }

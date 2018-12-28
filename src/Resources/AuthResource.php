@@ -9,6 +9,8 @@
 namespace Louisk\BoletoFacil\Resources;
 
 
+use Louisk\BoletoFacil\Exceptions\MissingNotificationUrlException;
+
 class AuthResource
 {
     /**
@@ -19,20 +21,50 @@ class AuthResource
      * @var bool
      */
     protected $sandbox;
+    /**
+     * @var string
+     */
+    protected $notificationUrl;
 
-    public function __construct(string $token, bool $sandbox, string $webHook)
+    /**
+     * AuthResource constructor.
+     * @param string $token
+     * @param bool $sandbox
+     * @param string $notificationUrl
+     */
+    public function __construct(string $token, bool $sandbox, string $notificationUrl)
     {
         $this->token = $token;
         $this->sandbox = $sandbox;
+        $this->notificationUrl = $notificationUrl;
     }
 
-    public function isSandbox()
+    /**
+     * @return bool
+     */
+    public function isSandbox(): bool
     {
         return $this->sandbox;
     }
 
-    public function getToken()
+    /**
+     * @return string
+     */
+    public function getToken(): string
     {
         return $this->token;
+    }
+
+    /**
+     * @return string
+     * @throws MissingNotificationUrlException
+     */
+    public function getNotificationUrl(): string
+    {
+        if(empty($this->notificationUrl)){
+            throw new MissingNotificationUrlException();
+        }
+
+        return $this->notificationUrl;
     }
 }

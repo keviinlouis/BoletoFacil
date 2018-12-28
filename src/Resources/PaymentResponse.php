@@ -84,7 +84,7 @@ class PaymentResponse
         string $fee,
         string $type,
         string $status,
-        string $creditCardId
+        string $creditCardId = null
     ) {
         $this->id = $id;
         $this->amount = $amount;

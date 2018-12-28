@@ -9,7 +9,6 @@
 namespace Louisk\BoletoFacil;
 
 
-use Louisk\BoletoFacil\Interfaces\Arrayable;
 use Louisk\BoletoFacil\Resources\AuthResource;
 use Louisk\BoletoFacil\Responses\Response;
 use GuzzleHttp\Client;
@@ -24,11 +23,20 @@ class Request
     const BASE_URL_SANDBOX = 'https://sandbox.boletobancario.com';
     const BASE_URI = 'boletofacil/integration/api/v1';
 
+    /**
+     * @var Client
+     */
     private $client;
-    private $webHookUrl;
-    private $auth;
 
+    /**
+     * @var AuthResource
+     */
+    protected $auth;
 
+    /**
+     * Request constructor.
+     * @param AuthResource $authResource
+     */
     public function __construct(AuthResource $authResource)
     {
         $this->client = new Client();
@@ -65,10 +73,10 @@ class Request
         return implode('/', $urlArray);
     }
 
-    protected function send($url, Arrayable $data)
+    protected function send($url, array $data = [])
     {
         $response = $this->client->get(
-            $this->makeUrl($url) . '?' .build_query($this->makeBody($data->toArray())),
+            $this->makeUrl($url) . '?' .build_query($this->makeBody($data)),
             [
                 'headers' => $this->makeHeaders(),
             ]
