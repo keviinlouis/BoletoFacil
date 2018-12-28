@@ -9,13 +9,10 @@
 namespace Louisk\BoletoFacil;
 
 
-use Louisk\BoletoFacil\Interfaces\ToPayment;
 use Louisk\BoletoFacil\Interfaces\ToPaymentBoleto;
 use Louisk\BoletoFacil\Interfaces\ToPaymentCreditCard;
 use Louisk\BoletoFacil\Requests\PaymentRequest;
 use Louisk\BoletoFacil\Resources\AuthResource;
-use Louisk\BoletoFacil\Resources\PayerResource;
-use Louisk\BoletoFacil\Resources\PaymentBoletoResource;
 
 class BoletoFacilService
 {
@@ -36,7 +33,11 @@ class BoletoFacilService
     {
        $request = new PaymentRequest($this->auth);
 
-       $request->create($payment->toBoleto());
+       $response = $request->create($payment->toBoleto());
+
+       $payment->savePaymentId($response->getCharge()->getCode());
+
+       $payment->saveBoletoData($response->getCharge());
 
     }
 
@@ -44,7 +45,9 @@ class BoletoFacilService
     {
         $request = new PaymentRequest($this->auth);
 
-        $request->create($payment->toPaymentCreditCard());
+        $response = $request->create($payment->toPaymentCreditCard());
+
+        $payment->savePaymentId($response->getCharge()->getCode());
     }
 
     public function get()
