@@ -42,7 +42,7 @@
     },
     "laravel": {
       "aliases": {
-        "BoletoFacil": "Louisk\\BoletoFacil\\Laravel\\BoletoFacilFactory"
+        "BoletoFacil": "Louisk\\BoletoFacil\\Laravel\\Facades\\BoletoFacilFactory"
       },
       "providers": [
         "Louisk\\BoletoFacil\\Laravel\\BoletoFacilServiceProvider"
