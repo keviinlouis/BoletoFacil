@@ -65,34 +65,10 @@ class FetchPaymentResponse
     }
 
     /**
-     * @return ChargeResponse[]
+     * @return PaymentResponse
      */
-    public function getCharges(): array
+    public function getPayment(): PaymentResponse
     {
-        return $this->charges;
-    }
-
-    /**
-     * @return ChargeResponse|null
-     */
-    public function getCharge(): ?ChargeResponse
-    {
-        return reset($this->charges);
-    }
-
-    /**
-     * @return PaymentResponse[]
-     */
-    public function getPayments(): array
-    {
-        return $this->payments;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isTransparentCheckout(): bool
-    {
-        return $this->isTransparentCheckout;
+        return $this->payment;
     }
 }
