@@ -72,4 +72,13 @@ class BoletoFacilService
 
         return $response;
     }
+
+    public function cancelPayment(string $code)
+    {
+        $request = new PaymentRequest($this->auth);
+        
+        $response = $request->cancel($code);
+        
+        return $resopnse;
+    }
 }
