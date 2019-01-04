@@ -79,6 +79,6 @@ class BoletoFacilService
         
         $response = $request->cancel($code);
         
-        return $resopnse;
+        return $response;
     }
 }
